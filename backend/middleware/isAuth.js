@@ -11,7 +11,7 @@ if (!token){
 }
 try {
 const decoded = jwt.verify(token,process.env.mykey)
-console.log(decoded)
+
 req.user=decoded
 next()
 

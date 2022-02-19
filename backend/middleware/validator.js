@@ -1,9 +1,9 @@
 const { body, validationResult } = require('express-validator')
 
 const registerRules=[
-
+    body("email","Email is not valid").isEmail(),
 body("name"," Name is required").notEmpty(),
-body("email","Email is not valid").isEmail(),
+
 body("password","The password must contain at least 8 characters ").isLength({min:8})    
 ]
 

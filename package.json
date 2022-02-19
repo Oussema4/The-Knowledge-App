@@ -1,0 +1,23 @@
+{
+  "name": "my-first-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "appStart": "concurrently \"cd backend && npx nodemon server.js\" \"cd frontend && npm start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oussema4/My_project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Oussema4/My_project/issues"
+  },
+  "homepage": "https://github.com/Oussema4/My_project#readme",
+  "dependencies": {
+    "concurrently": "^7.0.0"
+  }
+}

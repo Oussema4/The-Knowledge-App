@@ -10,9 +10,13 @@ exports.signup=async(req,res)=>{
     
         try {
     // user exist ?
-    const founduser=await User.findOne({email})
-    if (founduser) {
+    const foundemail=await User.findOne({email})
+    const foundusername=await User.findOne({name})
+    if (foundemail) {
         return res.status(400).send({errors:[{msg:"email is already exists"}]})
+        }
+        if(foundusername){
+            return res.status(400).send({errors:[{msg:"User Name is already exists"}]})
         }
     
     
@@ -24,7 +28,7 @@ exports.signup=async(req,res)=>{
     
            //hash password
     const salt=10
-    User.password=await bcrypt.hash(password,salt)
+    user.password=await bcrypt.hash(password,salt)
     
     
            await user.save()

@@ -1,0 +1,6 @@
+export const SIGNUP="SIGNUP"
+export const SIGNIN="SIGNIN"
+export const FAIL="FAIL"
+export const GETCURRENT="GETCURRENT"
+export const LOGOUT="LOGOUT"
+export const CLEARERRORS="CLEARERRORS"
