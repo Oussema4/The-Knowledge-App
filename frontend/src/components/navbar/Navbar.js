@@ -11,24 +11,38 @@ function Navbare() {
   const user=useSelector(state=>state.authReducer.user)
 const dispatch=useDispatch()
   return (
-   <div>
+   <div className='arround'>
  <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
    <Container>
-   <Navbar.Brand  as={Link} to="/"><p style={{fontSize:"25px"}}>THE KN<img  style={{width:"30px"}} src="icon_ball.png" alt="error"></img>WLEDGE</p></Navbar.Brand>
+   <Navbar.Brand  as={Link} to="/"><p  className='p_knowledge' style={{fontSize:"25px"}}>THE KN<img  style={{width:"30px"}} src="icon_ball.png" alt="error"></img>WLEDGE</p></Navbar.Brand>
    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
    <Navbar.Collapse id="responsive-navbar-nav">
      <Nav className="me-auto">
-     <Nav.Link as={Link} to="/" style={{fontSize:"18px"}}>Home</Nav.Link>
-      <Nav.Link as={Link} to="/" style={{fontSize:"18px"}}>Learn</Nav.Link>
-      <Nav.Link as={Link} to="/" style={{fontSize:"18px"}}>Play</Nav.Link>
+     <Nav.Link as={Link} to="/" style={{fontSize:"19px"}}>Home</Nav.Link>
+      <Nav.Link as={Link} to="/" style={{fontSize:"19px"}}>Learn</Nav.Link>
+
+      <Nav>
+       
+    
+       <NavDropdown    style={{fontSize:"19px"}} title="Games" id="collasible-nav-dropdown">
+        <NavDropdown.Item ><Link to="/quiz"  style={{textDecoration: "none",color:"black" }}>Quiz</Link> </NavDropdown.Item>
+        <NavDropdown.Item ><Link  to="/number" style={{textDecoration: "none",color:"black" }}>Number</Link></NavDropdown.Item>
+        <NavDropdown.Item ><Link  to="/questions" style={{textDecoration: "none",color:"black" }}>Questions and Responses</Link></NavDropdown.Item>
+
+        
+        
+        
+      </NavDropdown></Nav>
+    
       
      </Nav>
      {(localStorage.getItem("token"))?
      <Nav>
        
     
-       <NavDropdown  as={Link} to="/profile"  style={{fontSize:"19px"}} title={user.name} id="collasible-nav-dropdown">
-        <NavDropdown.Item href="#action/3.1">Edit Profile </NavDropdown.Item>
+       <NavDropdown    style={{fontSize:"19px"}} title={user.name} id="collasible-nav-dropdown">
+        <NavDropdown.Item href="#action/3.1"> Profile</NavDropdown.Item>
+        <NavDropdown.Item as={Link} to="/profile"> Edit Profile </NavDropdown.Item>
         <NavDropdown.Item href="#action/3.2">Help</NavDropdown.Item>
         
         <NavDropdown.Divider />

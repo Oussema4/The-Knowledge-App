@@ -1,2 +1,55 @@
-body{background-image: url(https://images2.alphacoders.com/100/thumb-1920-1003880.png);background-repeat: no-repeat;background-size: cover;}
-.inp{width:auto;display: flex;justify-content: end;margin-top: 20px; padding-right: 20px;}
+
+body {
+    background-image: url("https://images2.alphacoders.com/100/thumb-1920-1003880.png");
+      overflow: hidden;
+      background-repeat: no-repeat;
+      background-position: 50% 10%;
+    }
+    
+    
+    .container2 {
+        margin-top: 150px;
+      display: block;
+      position: absolute;
+      left: 80%;
+      top: -40px;
+      width: 100%;
+      height: 100%;
+      
+    }
+    
+    .goku {
+      width: 100%;
+      height: 100%;
+      background-image: url("http://vignette2.wikia.nocookie.net/fictional-battle-omniverse/images/8/8b/Goku_Dragon_Ball_Z.png/revision/latest?cb=20150508010447");
+      background-size: 200px auto;
+      background-repeat: no-repeat;
+    
+    }
+    
+    .goku:hover {
+      background-image: url(http://vignette3.wikia.nocookie.net/vsbattles/images/5/56/Goku_%28Base%29.png/revision/latest?cb=20160315175220);
+      background-size: 300px auto;
+    }
+    
+    
+    
+.p_knowledge {
+    background: linear-gradient(to bottom, yellow 0%, red 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  }
+
+    
+  .p_knowledge_home {
+    margin-top:20px;
+    background: linear-gradient(to bottom, rgb(14, 14, 1) 0%, red 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  }
+
+  .p_home_card{color:white;background-color: black; padding-bottom: 5px; margin-right: -2px;opacity: 0.2;}
+  .p_home_card:hover{color:white;background-color: black; padding-bottom: 5px; margin-right: -2px;opacity: 1;}
+
