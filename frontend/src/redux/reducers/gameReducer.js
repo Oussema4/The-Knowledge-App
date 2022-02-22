@@ -1,13 +1,15 @@
-import {   GETNUMBERQUESTIONS, GETQUESTIONS, GETQUIZQUESTIONS } from "../types/gameType"
+import {    GETNUMBERQUESTIONS, GETONENUMBER, GETONEQUIZ, GETQUESTIONS, GETQUIZQUESTIONS } from "../types/gameType"
 
 
 
 const initState={
 allquestions:[],
-quizquestions:{},
+quizquestions:[],
 numberquestions:[],
+onequiz:{},
+onenumber:{},
 loading:true,
-response:false
+
 
 
 }
@@ -24,7 +26,12 @@ case GETQUIZQUESTIONS:
     return{...state,quizquestions:action.payload,loading:false}
     case GETNUMBERQUESTIONS:
         return{...state,numberquestions:action.payload,loading:false}
+        case GETONEQUIZ:
+            return{...state,onequiz:action.payload}
+            case GETONENUMBER:
+                return{...state,onenumber:action.payload}
 
+    
     
        
 

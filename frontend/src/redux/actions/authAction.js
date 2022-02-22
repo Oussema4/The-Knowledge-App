@@ -24,7 +24,7 @@ export const signin=(data,navigate)=>async(dispatch)=>{
     try {
         const res=await axios.post("/auth/signin",data)
         dispatch({type:SIGNIN,payload:res.data})
-         navigate("/profile")
+         navigate("/")
 
     } catch (error) {
                 dispatch({type:FAIL,payload:error.response.data})

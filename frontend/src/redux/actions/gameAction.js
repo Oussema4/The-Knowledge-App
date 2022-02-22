@@ -1,5 +1,5 @@
 import axios from "axios"
-import { GETNUMBERQUESTIONS, GETQUESTIONS, GETQUIZQUESTIONS } from "../types/gameType"
+import {  GETNUMBERQUESTIONS, GETONENUMBER, GETONEQUIZ, GETQUESTIONS, GETQUIZQUESTIONS } from "../types/gameType"
 
 //getAll questions
 
@@ -55,17 +55,57 @@ export const getquestions=()=>async(dispatch)=>{
             }
 
 
+
+            export const getOneQuiz=(navigate)=>async(dispatch)=>{
+                const res=await axios.get("/game/getOneQuiz")
+                try {
+                    
+                
+                    dispatch({type:GETONEQUIZ,payload:res.data})
+                        navigate("/quiz")
+                    
+                } catch (error) {
+                    console.log(error)
+            
+                }
+                
+                
+                }
+
+              
+
+                
+            export const getOneNumber=(navigate)=>async(dispatch)=>{
+                const res=await axios.get("/game/getOneNumber")
+                try {
+                    
+                
+                    dispatch({type:GETONENUMBER,payload:res.data})
+                        navigate("/number")
+                    
+                } catch (error) {
+                    console.log(error)
+            
+                }
+                
+                
+                }
+
+
+
+
+
         
 
 
 
 
-export const addquestion=(data)=>async(dispatch)=>{
+export const addQuizQuestion=(data)=>async(dispatch)=>{
 
 try {
     await axios.post("/game/addQuestion",data)
 
-    
+    dispatch(getQuizQuestions())
         
     
 } catch (error) {
@@ -75,3 +115,19 @@ try {
 
 
 }
+
+export const addNumberquestion=(data)=>async(dispatch)=>{
+
+    try {
+        await axios.post("/game/addQuestion",data)
+    
+        dispatch(getNumberQuestions())
+            
+        
+    } catch (error) {
+        console.log(error)
+        
+    }
+    
+    
+    }

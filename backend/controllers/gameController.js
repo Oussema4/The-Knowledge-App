@@ -106,10 +106,11 @@ exports.getSport=async(req,res)=>{
 
 
     exports.getQuiz=async(req,res)=>{
-        const question= await Game.find({ game_type: "quiz" })
+       
+        const question= await Game.find({ game_type: "quiz"  })
         try {
             res.send(question)
-            
+           
         } catch (error) {
             res.status(500).send("server error")
         }
@@ -120,6 +121,7 @@ exports.getSport=async(req,res)=>{
         exports.getNumber=async(req,res)=>{
             const question= await Game.find({ game_type: "number" })
             try {
+                
                 res.send(question)
                 
             } catch (error) {
@@ -127,3 +129,68 @@ exports.getSport=async(req,res)=>{
             }
             
             }
+
+
+            exports.getOneQuiz=async(req,res)=>{
+   
+                
+
+            
+
+              Game.countDocuments({ game_type: "quiz"  }, function (err, count) {
+                return random= Math.floor(Math.random() * count)
+               
+                  
+                })
+                    try {   
+                        const question= await Game.findOne({ game_type: "quiz"  }).skip(random)
+                        res.send(question)
+                       
+                         
+                           
+                        } catch (error) {
+                            res.status(500).send("server error")
+                        }
+                  }
+                  
+ 
+
+               
+               
+
+                  
+            exports.getOneNumber=async(req,res)=>{
+   
+                
+
+            
+
+                  Game.countDocuments({ game_type: "number"  }, function (err, count) {
+                   return random= Math.floor(Math.random() * count)
+                  
+                     
+                   })
+                       try {   
+                           const question= await Game.findOne({ game_type: "number"  }).skip(random)
+                           res.send(question)
+                          
+                            
+                              
+                           } catch (error) {
+                               res.status(500).send("server error")
+                           }
+                     }
+               
+                
+                
+
+
+          
+
+            
+
+            
+    
+
+            
+   

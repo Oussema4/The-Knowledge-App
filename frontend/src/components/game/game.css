@@ -95,7 +95,7 @@ body {
 	font-family: 'Montserrat', serif;
 }
 
-main {
+.main {
 	width: 100%;
 	min-height: 100vh;
 	display: flex;
@@ -401,3 +401,8 @@ input[type=radio]:checked ~ .option {
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
   }
+
+  /*buttons*/
+
+
+  

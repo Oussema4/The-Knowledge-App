@@ -41,7 +41,7 @@ const dispatch=useDispatch()
        
     
        <NavDropdown    style={{fontSize:"19px"}} title={user.name} id="collasible-nav-dropdown">
-        <NavDropdown.Item href="#action/3.1"> Profile</NavDropdown.Item>
+
         <NavDropdown.Item as={Link} to="/profile"> Edit Profile </NavDropdown.Item>
         <NavDropdown.Item href="#action/3.2">Help</NavDropdown.Item>
         

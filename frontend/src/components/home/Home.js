@@ -1,7 +1,8 @@
 import React from 'react'
+import { Button } from 'react-bootstrap'
 import { useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
-import { getNumberQuestions, getQuizQuestions } from '../../redux/actions/gameAction'
+import {  getNumberQuestions, getOneQuiz, getQuizQuestions } from '../../redux/actions/gameAction'
 
 import  "./home.css"
 function Home() {
@@ -17,7 +18,7 @@ const navigate=useNavigate()
      <div >
        <h1  className='p_knowledge_home' style={{textAlign:"center"}}>WELCOME TO THE KN<img  style={{width:"40px"}} src="icon_ball.png" alt="error"></img>WLEDGE  WORLD</h1>
 <div className="cards-list"  >
-
+<Link to="/Learn">
 <div className="card 4" >
          <div className="card_image">
            <img src="https://media.giphy.com/media/lPwZcFRMGOFPO/giphy.gif" />
@@ -28,10 +29,10 @@ const navigate=useNavigate()
          </div>
          
        </div>
+       </Link>
 
-
-
-       <div className="card 3" onClick={()=>dispatch(getQuizQuestions(navigate))}>
+<Link to="/quiz">
+       <div className="card 3" >
          <div className="card_image">
            <img src="https://media.giphy.com/media/tgWX6N4nHQjNC/giphy.gif" />
          </div>
@@ -41,8 +42,9 @@ const navigate=useNavigate()
          </div>
          
        </div>
-    
-       <div className="card 4" onClick={()=>dispatch(getNumberQuestions(navigate))}>
+       </Link>
+       <Link to="/number">
+       <div className="card 4" >
          <div className="card_image">
            <img src="https://media.giphy.com/media/dJoJCypWihblC/giphy.gif" />
          </div>
@@ -52,9 +54,8 @@ const navigate=useNavigate()
          </div>
          
        </div>
+       </Link>
 
-
-      
       
      </div>
  
