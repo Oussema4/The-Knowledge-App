@@ -1,5 +1,5 @@
 import axios from "axios"
-import {  GETNUMBERQUESTIONS, GETONENUMBER, GETONEQUIZ, GETQUESTIONS, GETQUIZQUESTIONS } from "../types/gameType"
+import {   GETONENUMBER, GETONEQUESTION, GETONEQUIZ, GETQUESTIONS, TOGGLEFALSE, TOGGLETRUE } from "../types/gameType"
 
 //getAll questions
 
@@ -19,40 +19,9 @@ export const getquestions=()=>async(dispatch)=>{
     
     }
 
-    //get question by type
-
-    export const getQuizQuestions=(navigate)=>async(dispatch)=>{
-        const res=await axios.get("/game/getQuiz")
-        try {
-            
-            
-            dispatch({type:GETQUIZQUESTIONS,payload:res.data})
-            navigate("/quiz")
-            
-        } catch (error) {
-            console.log(error)
-    
-        }
-        
-        
-        }
 
 
-        export const getNumberQuestions=(navigate)=>async(dispatch)=>{
-            const res=await axios.get("/game/getNumber")
-            try {
-                
-            
-                dispatch({type:GETNUMBERQUESTIONS,payload:res.data})
-                    navigate("/number")
-                
-            } catch (error) {
-                console.log(error)
-        
-            }
-            
-            
-            }
+       
 
 
 
@@ -62,7 +31,7 @@ export const getquestions=()=>async(dispatch)=>{
                     
                 
                     dispatch({type:GETONEQUIZ,payload:res.data})
-                        navigate("/quiz")
+                        
                     
                 } catch (error) {
                     console.log(error)
@@ -81,7 +50,7 @@ export const getquestions=()=>async(dispatch)=>{
                     
                 
                     dispatch({type:GETONENUMBER,payload:res.data})
-                        navigate("/number")
+                        
                     
                 } catch (error) {
                     console.log(error)
@@ -92,6 +61,20 @@ export const getquestions=()=>async(dispatch)=>{
                 }
 
 
+                export const getOneQuestion=(id)=>async(dispatch)=>{
+                    try {
+                       const res= await axios.get(`/game/${id}`)
+                       dispatch({type:GETONEQUESTION,payload:res.data})
+                    } catch (error) {
+                        console.log(error)
+
+                    }
+
+
+                }
+                
+
+
 
 
 
@@ -100,34 +83,61 @@ export const getquestions=()=>async(dispatch)=>{
 
 
 
-export const addQuizQuestion=(data)=>async(dispatch)=>{
 
-try {
-    await axios.post("/game/addQuestion",data)
-
-    dispatch(getQuizQuestions())
-        
-    
-} catch (error) {
-    console.log(error)
-    
-}
-
-
-}
-
-export const addNumberquestion=(data)=>async(dispatch)=>{
+export const addquestion=(data)=>async(dispatch)=>{
 
     try {
         await axios.post("/game/addQuestion",data)
     
-        dispatch(getNumberQuestions())
+        dispatch(getquestions())
             
-        
+      
     } catch (error) {
         console.log(error)
         
     }
     
     
+    }
+
+    export const editQuestion=(id,data)=>async(dispatch)=>{
+        try {
+            
+            await axios.put(`/game/${id}`,data)
+    
+            dispatch(getquestions())
+    
+        } catch (error) {
+            console.log(error)
+    
+        }
+    }
+
+
+    export const toggleTrue=()=>{
+
+        return{
+            type:TOGGLETRUE
+        }
+    }
+    
+    export const toggleFalse=()=>{
+    
+        return{
+            type:TOGGLEFALSE
+        }
+    }
+     
+
+    export const deleteQuestion=(id)=>async(dispatch)=>{
+
+        try {
+            await axios.delete(`game/${id}`)
+            dispatch(getquestions())
+    
+            
+        } catch (error) {
+            console.log(error)
+    
+        }
     }

@@ -10,9 +10,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getcurrent } from './redux/actions/authAction';
 import PrivateRoute from './router/PrivateRoute';
-import Quiz from './components/game/Quiz';
-import Numbergame from './components/game/Numbergame';
-import Questions from './components/game/Questions';
+import Quiz from './components/game for user/Quiz';
+import Numbergame from './components/game for user/Numbergame';
+import Questions from './components/game for admin/Questions';
+import AddEdit from './components/game for admin/Add and Edit';
 
 
 function App() {
@@ -40,6 +41,7 @@ const user=useSelector(state=>state.authReducer.user)
       <Route path="/quiz" element={<PrivateRoute><Quiz></Quiz></PrivateRoute>}></Route>
       <Route path="/number" element={<PrivateRoute><Numbergame></Numbergame></PrivateRoute>}></Route>
       <Route path="/questions" element={<PrivateRoute><Questions></Questions></PrivateRoute>}></Route>
+      <Route path="/add_edit" element={<PrivateRoute><AddEdit></AddEdit></PrivateRoute>}></Route>
 
       </Routes>
     </div>

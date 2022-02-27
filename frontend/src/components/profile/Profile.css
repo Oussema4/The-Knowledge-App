@@ -15,7 +15,8 @@
 }
 
 .main-user-info {
-  border-left: 2px solid #ccc;
+  border-left: 0px solid #ccc;
+  margin-right: 20px;
 }
 
 .panel-body {
@@ -33,7 +34,7 @@
 .item {
   padding: 20px 16px 0 16px;
   height: 40px;
-  width: 450px;
+  width: 550px;
   display: flex;
   align-items: center;
   justify-content: space-between;

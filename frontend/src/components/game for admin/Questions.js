@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import { getquestions } from '../../redux/actions/gameAction'
 import { useDispatch,useSelector} from 'react-redux'
-import Gamecard from './Gamecard'
+import Gamecard from '../game for user/Gamecard'
 import { Button, Form, FormControl } from 'react-bootstrap'
-import "./game.css"
+import "../game for user/game.css"
 
 function Questions() {
 
@@ -20,7 +20,7 @@ useEffect(()=>{
   return (
 
 
-    <div>
+    <div >
         <div className='inp'>
     <Form className="d-flex">
         <FormControl
@@ -34,16 +34,14 @@ useEffect(()=>{
       </div>
     
     
+    
+  
+<h2>   {allquestions.map(el=><Gamecard el={el}></Gamecard>)}</h2>
 
 
-   {allquestions.map(el=><h2>{el.question}</h2>)}
+
   
    
-    
-    
-    
-    
-    
     
     </div>
   )

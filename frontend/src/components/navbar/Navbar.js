@@ -25,29 +25,44 @@ const dispatch=useDispatch()
        
     
        <NavDropdown    style={{fontSize:"19px"}} title="Games" id="collasible-nav-dropdown">
-        <NavDropdown.Item ><Link to="/quiz"  style={{textDecoration: "none",color:"black" }}>Quiz</Link> </NavDropdown.Item>
-        <NavDropdown.Item ><Link  to="/number" style={{textDecoration: "none",color:"black" }}>Number</Link></NavDropdown.Item>
-        <NavDropdown.Item ><Link  to="/questions" style={{textDecoration: "none",color:"black" }}>Questions and Responses</Link></NavDropdown.Item>
+        <NavDropdown.Item as={Link}  to="/quiz"  style={{textDecoration: "none",color:"black" }} >Quiz</NavDropdown.Item>
+        <NavDropdown.Item ><Link  to="/number" style={{textDecoration: "none",color:"black" }}> Guess The Number</Link></NavDropdown.Item>
+
+      
 
         
-        
+      </NavDropdown></Nav>
+    
+
+      <Nav>
+       
+    
+       <NavDropdown    style={{fontSize:"19px"}} title="Admin" id="collasible-nav-dropdown">
+       <NavDropdown.Item ><Link  to="/add_edit" style={{textDecoration: "none",color:"black" }}>Add</Link></NavDropdown.Item>
+
+        <NavDropdown.Item ><Link  to="/questions" style={{textDecoration: "none",color:"black" }}>Questions List</Link></NavDropdown.Item>
+
+      
+
         
       </NavDropdown></Nav>
+    
     
       
      </Nav>
      {(localStorage.getItem("token"))?
      <Nav>
        
-    
-       <NavDropdown    style={{fontSize:"19px"}} title={user.name} id="collasible-nav-dropdown">
+       <img style={{width:"50px",height:"50px",borderRadius:"50px"}} src={user.imageUrl?`uploads/${user.imageUrl}`:"defaultPdp.jpg"}></img>
+       <NavDropdown    style={{fontSize:"19px"}}  title={user.name} id="collasible-nav-dropdown">
 
         <NavDropdown.Item as={Link} to="/profile"> Edit Profile </NavDropdown.Item>
         <NavDropdown.Item href="#action/3.2">Help</NavDropdown.Item>
         
         <NavDropdown.Divider />
         <NavDropdown.Item  onClick={()=>dispatch(logout())}><Link to="/Login">Logout</Link></NavDropdown.Item>
-      </NavDropdown></Nav>
+      </NavDropdown>
+      </Nav>
        :
      <Nav>
        

@@ -1,10 +1,13 @@
 
 body {
-    background-image: url("https://images2.alphacoders.com/100/thumb-1920-1003880.png");
-      overflow: hidden;
+    
+      background-size:cover;
       background-repeat: no-repeat;
       background-position: 50% 10%;
+ background-image: url("https://www.teahub.io/photos/full/111-1117885_dragon-ball-z-4k-ultra-hd.jpg");
     }
+
+    
     
     
     .container2 {
@@ -50,6 +53,6 @@ body {
   
   }
 
-  .p_home_card{color:white;background-color: black; padding-bottom: 5px; margin-right: -2px;opacity: 0.2;}
-  .p_home_card:hover{color:white;background-color: black; padding-bottom: 5px; margin-right: -2px;opacity: 1;}
+  .p_home_card{text-decoration: underline;}
+
 

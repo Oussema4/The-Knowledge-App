@@ -10,7 +10,7 @@
     flex-wrap: wrap;
   }
   
-  .card {
+  .carta {
     margin: 90px auto;
     width: 300px;
     height: 300px;
@@ -20,20 +20,20 @@
     transition: 0.4s;
   }
   
-  .card .card_image {
+  .carta .carta_image {
     width: inherit;
     height: inherit;
     border-radius: 40px;
   }
   
-  .card .card_image img {
+  .carta .carta_image img {
     width: inherit;
     height: inherit;
     border-radius: 20px;
     object-fit: cover;
   }
   
-  .card .card_title {
+  .carta .carta_title {
     text-align: center;
     border-radius: 0px 0px 40px 40px;
     font-family: sans-serif;
@@ -43,7 +43,7 @@
     height: 40px;
   }
   
-  .card:hover {
+  .carta:hover {
     transform: scale(0.9, 0.9);
     box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
       -5px -5px 30px 15px rgba(0,0,0,0.22);
@@ -56,7 +56,7 @@
   }
   
   @media all and (max-width: 500px) {
-    .card-list {
+    .carta-list {
       /* On small screens, we are no longer using row direction but column */
       flex-direction: column;
     }
@@ -64,7 +64,7 @@
   
   
   /*
-  .card {
+  .carta {
     margin: 30px auto;
     width: 300px;
     height: 300px;
@@ -406,3 +406,6 @@ input[type=radio]:checked ~ .option {
 
 
   
+
+
+  /* Basic reset */

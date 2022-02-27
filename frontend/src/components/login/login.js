@@ -24,13 +24,13 @@ function Login() {
       <div id="signup-tab-content" className="active">
         <form className="signup-form" action method="post">
           
-        <input type="email" className="input" id="user_email" autoComplete="off" placeholder="Email" onChange={(e)=>setEmail(e.target.value)} value={email} />
+        <input type="email" className="input" id="user_email" autoComplete="on" placeholder="Email" onChange={(e)=>setEmail(e.target.value)} value={email} />
         <input type="password" className="input" id="user_pass" autoComplete="off" placeholder="Password" onChange={(e)=>setPassword(e.target.value)} value={password} />
         <button  className="button"  onClick={(e)=>{handleSubmit(e);dispatch(signin({email,password},navigate))}}>ENVOYER</button>
         </form>{/*.login-form*/}
         <div className="help-text">
         <p>Forgot password?<Link to="/n">Reset password</Link></p>
-          <p>if you don't have an account <Link to="/signup">Sign Up</Link></p>
+          <p>Don't have an account <Link to="/signup">Sign Up</Link></p>
          
         </div>{/*.help-text*/}
       </div>{/*.signup-tab-content*/}

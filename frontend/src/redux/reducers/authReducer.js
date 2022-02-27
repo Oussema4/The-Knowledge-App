@@ -4,7 +4,8 @@ const initState={
 
     user:{},
     auth:false,
-    errors:[]
+    errors:[],
+    change:true
 }
 
 const authReducer=(state=initState,action)=>{
@@ -19,7 +20,7 @@ const authReducer=(state=initState,action)=>{
            case FAIL:
            return{...state,errors:action.payload.errors,auth:false}
     case GETCURRENT:
-        return{...state,user:action.payload,auth:true }
+        return{...state,user:action.payload,auth:true,change:true }
 
 case LOGOUT:
     localStorage.removeItem("token")

@@ -1,14 +1,11 @@
-import {    GETNUMBERQUESTIONS, GETONENUMBER, GETONEQUIZ, GETQUESTIONS, GETQUIZQUESTIONS } from "../types/gameType"
+import {     GETONENUMBER, GETONEQUESTION, GETONEQUIZ, GETQUESTIONS, TOGGLEFALSE, TOGGLETRUE } from "../types/gameType"
 
 
 
 const initState={
 allquestions:[],
-quizquestions:[],
-numberquestions:[],
-onequiz:{},
-onenumber:{},
-loading:true,
+onequestion:{},
+edit:false
 
 
 
@@ -21,19 +18,16 @@ const gameReducer=(state=initState,action)=>{
 switch (action.type) {
 
     case GETQUESTIONS:
-        return{...state,allquestions:action.payload,loading:false}
-case GETQUIZQUESTIONS:
-    return{...state,quizquestions:action.payload,loading:false}
-    case GETNUMBERQUESTIONS:
-        return{...state,numberquestions:action.payload,loading:false}
+        return{...state,allquestions:action.payload}
         case GETONEQUIZ:
-            return{...state,onequiz:action.payload}
-            case GETONENUMBER:
-                return{...state,onenumber:action.payload}
-
-    
-    
-       
+        case GETONENUMBER:
+            case GETONEQUESTION:
+            return{...state,onequestion:action.payload}
+                          case TOGGLETRUE:
+                       return{...state,edit:true}
+                        case TOGGLEFALSE:
+                            return{...state,edit:false}
+         
 
     default:
         return state
