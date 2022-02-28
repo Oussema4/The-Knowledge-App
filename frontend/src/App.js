@@ -40,7 +40,7 @@ const user=useSelector(state=>state.authReducer.user)
       <Route path="/profile"element={<PrivateRoute><Profile></Profile></PrivateRoute>}/>
       <Route path="/quiz" element={<PrivateRoute><Quiz></Quiz></PrivateRoute>}></Route>
       <Route path="/number" element={<PrivateRoute><Numbergame></Numbergame></PrivateRoute>}></Route>
-      <Route path="/questions" element={<PrivateRoute><Questions></Questions></PrivateRoute>}></Route>
+      <Route path="/questions" element={<PrivateRoute ><Questions></Questions></PrivateRoute>}></Route>
       <Route path="/add_edit" element={<PrivateRoute><AddEdit></AddEdit></PrivateRoute>}></Route>
 
       </Routes>

@@ -19,6 +19,7 @@ function AddEdit() {
     setdata({...data,[e.target.name]:e.target.value})
   }
 
+
  
 
   
@@ -55,44 +56,55 @@ useEffect(()=>{edit && edit?setdata({question:question && question.question,
   },[question])
 
   return (
-    <div>
+    <div >
         
 
  
    
 
        
-   <Form>
+   <Form style={{marginLeft:"500px"}}>
     
    <Form.Group className="mb-3" controlId="formBasicPassword">
-    <Form.Label>The question type</Form.Label>
-    <Form.Control value={data.question_type} type="text"   placeholder=" the question type"  name="question_type" onChange={handleChange}  />
+    <Form.Label><b>The game type</b></Form.Label>
+    <br/>
+    <Button variant='dark' name="game_type" onClick={(e)=> setdata({...data,[e.target.name]:"number"})} >Guess The Number</Button> 
+    <Button onClick={(e)=> setdata({...data,[e.target.name]:"quiz"})}   name="game_type" variant='warning'>Quiz</Button>
+    <Form.Control  style={{width:"50%"}} value={data.game_type} disabled type="text" placeholder=" the game type"   />
   </Form.Group>
 
-   <Form.Group className="mb-3" controlId="formBasicPassword">
-    <Form.Label>The game type</Form.Label>
-    <Form.Control value={data.game_type} type="text" placeholder=" the game type"  name="game_type" onChange={handleChange}  />
+
+   <Form.Group className="mb-3" controlId="formBasicPassword" > 
+    <Form.Label><b>The question type</b></Form.Label>
+    <br/>
+    <Button variant='dark' name="question_type" onClick={(e)=> setdata({...data,[e.target.name]:"Sport"})}>Sport</Button>  
+    <Button variant='warning'  name="question_type" onClick={(e)=> setdata({...data,[e.target.name]:"History"})}>History</Button> 
+    <Button variant='danger'  name="question_type" onClick={(e)=> setdata({...data,[e.target.name]:"Worldwide"})}>Worldwide</Button>
+
+    <Form.Control  style={{width:"50%"}}  value={data.question_type} type="text"   style={{width:"50%"}} placeholder=" the question type"  name="question_type" onChange={handleChange}  />
   </Form.Group>
+
+
  
   <Form.Group className="mb-3" controlId="formBasicPassword">
-    <Form.Label>Question</Form.Label>
-    <Form.Control value={data.question} type="text" placeholder="question"  name="question" onChange={handleChange}/>
+    <Form.Label><b>Question</b></Form.Label>
+    <Form.Control  style={{width:"50%"}} value={data.question} type="text" placeholder="question"  name="question" onChange={handleChange}/>
   </Form.Group>
   <Form.Group className="mb-3" controlId="formBasicPassword">
-    <Form.Label>Choice 1</Form.Label>
-    <Form.Control value={data.choice1} type="text" placeholder="choice1"  name="choice1" onChange={handleChange}/>
+    <Form.Label><b>Choice 1</b></Form.Label>
+    <Form.Control  style={{width:"50%"}} value={data.choice1} type={data.game_type=="number"?"number":"text"} placeholder={data.game_type=="number"?"close to the answer":"choice 1"}   name="choice1" onChange={handleChange}/>
   </Form.Group>
   <Form.Group className="mb-3" controlId="formBasicPassword">
-    <Form.Label>Choice 2</Form.Label>
-    <Form.Control value={data.choice2}  type="text" placeholder="choice2"  name="choice2" onChange={handleChange}  />
+    <Form.Label><b>Choice 2</b></Form.Label>
+    <Form.Control  style={{width:"50%"}} value={data.choice2}  type={data.game_type=="number"?"number":"text"}placeholder={data.game_type=="number"?"close to the answer":"choice 2"}   name="choice2" onChange={handleChange}  />
   </Form.Group>
   <Form.Group className="mb-3" controlId="formBasicPassword">
-    <Form.Label>Choice 3</Form.Label>
-    <Form.Control  value={data.choice3}  type="text" placeholder="choice3"  name="choice3" onChange={handleChange}  />
+    <Form.Label><b>Choice 3</b></Form.Label>
+    <Form.Control  style={{width:"50%"}}  value={data.choice3}  type={data.game_type=="number"?"number":"text"} placeholder={data.game_type=="number"?"close to the answer":"choice 3"}  name="choice3" onChange={handleChange}  />
   </Form.Group>
   <Form.Group className="mb-3" controlId="formBasicPassword">
-    <Form.Label>The True Choice</Form.Label>
-    <Form.Control  value={data.true_choice} type="text" placeholder=" the true choice"  name="true_choice" onChange={handleChange}  />
+    <Form.Label><b>The True Choice</b></Form.Label>
+    <Form.Control  style={{width:"50%"}}  value={data.true_choice} type={data.game_type=="number"?"number":"text"} placeholder=" the true choice"  name="true_choice" onChange={handleChange}  />
   </Form.Group>
   
 
@@ -105,6 +117,7 @@ useEffect(()=>{edit && edit?setdata({question:question && question.question,
 
   
 </Form>
+    
     
     
     

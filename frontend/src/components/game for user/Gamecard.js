@@ -38,21 +38,24 @@ function Gamecard({el}) {
   
     </Card.Text>
 
-    
-   <Button variant="primary">{el.choice1}</Button>
-    <Button variant="primary">{el.choice2}</Button>
-    <Button variant="primary">{el.choice3}</Button>
-    <Button variant="primary">{el.true_choice}</Button>
+    <div style={{textAlign:"center"}}>
+   <Button  style={{width:"200px"}} variant="primary">{el.choice1}</Button>
+    <Button style={{width:"200px"}} variant="primary">{el.choice2}</Button>
+    <Button style={{width:"200px"}} variant="primary">{el.choice3}</Button>
+    <Button style={{width:"200px"}} variant="success">{el.true_choice}</Button>
+    </div>
   
     <br/>
 
-{el.game_type==="quiz"?<Button variant="success">{el.game_type}</Button>:<Button variant="info">{el.game_type}</Button>}
+{el.game_type==="quiz"?<Button variant="dark">{el.game_type}</Button>:<Button variant="secondary">{el.game_type}</Button>}
    
     <Button variant="danger">{el.question_type}</Button>
 <br/>
+<br/>
+<div style={{textAlign:"right"}}>
     <Button variant="warning"  onClick={handleEdit}>Edit</Button>
     <Button variant="danger"  onClick={handleDelete}>Delete</Button>
-
+    </div>
     
   </Card.Body>
 </Card>

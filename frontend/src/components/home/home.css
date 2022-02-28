@@ -4,7 +4,7 @@ body {
       background-size:cover;
       background-repeat: no-repeat;
       background-position: 50% 10%;
- background-image: url("https://www.teahub.io/photos/full/111-1117885_dragon-ball-z-4k-ultra-hd.jpg");
+ background-image: url("https://images2.alphacoders.com/100/thumb-1920-1003880.png");
     }
 
     
@@ -14,9 +14,9 @@ body {
         margin-top: 150px;
       display: block;
       position: absolute;
-      left: 80%;
+      left: 0%;
       top: -40px;
-      width: 100%;
+      width: 280px;
       height: 100%;
       
     }

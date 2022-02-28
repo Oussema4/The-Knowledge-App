@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 import {  getcurrent, logout } from '../../redux/actions/authAction'
 import "./Profile.css"
 function Profile() {
@@ -61,7 +62,7 @@ const handelEdit=async()=>{
                   {user.email}
                 </li>
                 <li className="list-group-item">
-                  bio
+                  Points
                 </li>
               </ul>
             </div>
@@ -70,36 +71,29 @@ const handelEdit=async()=>{
           <div className="privacy-item">
             <h4 className="text-left">Privacy</h4>
           </div>
-          <div className="item">
-            <div className="col-md-10 label">
-              <p>
-                <a href="https://www.plinga.com/corporate/terms-of-service">Agree with our terms of service and our privacy policy apply to this game.
-                </a>
-              </p>
-            </div>
-            <div className="col-md-2">
-              <label className="switch"><input type="checkbox" />
-                <div className="slider" />
-              </label>
-            </div>
-          </div>
+         
           <div className="item">
             <div className="label">
+              <h6 style={{color:"white"}}>Change your Profile photo</h6>
             <input type="file"  style={{color:"white"}} onChange={(e)=>setFile(e.target.files[0])}/>  
            </div>
           </div>
-          <div className="item">
-            <div className="label">
-              <p ><a className="text-danger" href="https://www.plinga.com/corporate/terms-of-service" target="_blank" >Delete your account</a></p>
-            </div>
-          </div>
+         
+          <hr />
           <div className="col-md-6" />
           <div className="panel-footer">
             <button className="btn btn-success btn-block" onClick={handelEdit}>Save changes</button>
             
             <button className="btn btn-danger btn-block" onClick={()=>dispatch(logout())}>Logout</button>
+            <div className="item">
+            <div className="label">
+              <h6 ><Link to="/" >Delete your account</Link></h6>
+            </div>
           </div>
+          </div>
+          
         </div>
+        
       </div>
      
 

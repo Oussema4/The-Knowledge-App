@@ -4,6 +4,7 @@ import { useDispatch,useSelector} from 'react-redux'
 import Gamecard from '../game for user/Gamecard'
 import { Button, Form, FormControl } from 'react-bootstrap'
 import "../game for user/game.css"
+import { Link } from 'react-router-dom'
 
 function Questions() {
 
@@ -21,7 +22,10 @@ useEffect(()=>{
 
 
     <div >
+             <h1  className='p_knowledge_home' style={{textAlign:"center"}}>QUESTI<img  style={{width:"40px"}} src="icon_ball.png" alt="error"></img>NS LIST</h1>
+             <Link to="/add_edit"><Button >Add New Question </Button></Link> 
         <div className='inp'>
+          
     <Form className="d-flex">
         <FormControl
           type="search"
@@ -32,6 +36,7 @@ useEffect(()=>{
         <Button variant="outline-dark ">Search</Button>
       </Form>
       </div>
+      <br/>
     
     
     

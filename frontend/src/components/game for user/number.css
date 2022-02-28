@@ -3,12 +3,6 @@
 /* Finally adding some IE9 fallbacks for gradients to finish things up */
 
 /* A nice BG gradient */
-html {
-	height: 100%;
-	background: white;
-	background: radial-gradient(circle, #fff 20%, #ccc);
-	background-size: cover;
-}
 
 /* Using box shadows to create 3D effects */
 #calculator {

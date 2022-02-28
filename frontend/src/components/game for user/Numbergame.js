@@ -1,29 +1,44 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Card } from 'react-bootstrap'
+import { Button, Card, Form } from 'react-bootstrap'
 import { useDispatch,useSelector} from 'react-redux'
 import { Link } from 'react-router-dom'
 import {  getOneNumber } from '../../redux/actions/gameAction'
 import "./number.css"
 function Numbergame() {
-  const [x,setx]=useState(Math.random())
 
   const onequestion=useSelector(state=>state.gameReducer.onequestion)
 
+  const [screen,setScreen]=useState("")
 
   useEffect(()=>{
 
-    {dispatch(getOneNumber());setx(Math.random())}
+    {dispatch(getOneNumber())}
           
         },[])
   const dispatch=useDispatch()
 
+const goodJob=(e)=>{
+  {dispatch(getOneNumber());setScreen("");e.preventDefault();}
+
+}
+
+const uCanDobetter=(e)=>{
+  e.preventDefault();
+  setScreen("")
+  alert("no false");
+  dispatch(getOneNumber());
+
+  
+}
+
+
   return (
-    <div>
+    <div className='numbergame'>
+      
+      <Form>
     
-
-
    
-     <h1>{onequestion.question}</h1>
+     <h1 style={{textAlign:'center',color:"white",paddingTop:"40px",paddingBottom:"80px",backgroundImage:"url(https://www.seekpng.com/png/full/375-3753368_background-image-for-title-unhitched-book-by-sunny.png)"}}>{onequestion.question}</h1>
     
 
          
@@ -36,26 +51,27 @@ function Numbergame() {
                 <div id="calculator">
         {/* Screen and clear key */}
         <div className="top">
-          <span className="clear">C</span>
-          <input  className='screen'/>
+          <span className="clear" onClick={()=>setScreen("")}>C</span>
+          <input   className='screen' autofocus="on" value={screen} onChange={(e)=>setScreen(e.target.value)}/>
         </div>
         <div className="keys">
           {/* operators and other keys */}
           
-          <span>1</span>
-          <span>2</span>
+          <span onClick={()=>setScreen(screen+"1")} >1</span>
           
-          <span>3</span>
-          <span>4</span>
-          <span>5</span>
+          <span onClick={()=>setScreen(screen+"2")} >2</span>
           
-          <span>6</span>
-          <span>7</span>
-          <span>8</span>
+          <span onClick={()=>setScreen(screen+"3")} >3</span>
+          <span onClick={()=>setScreen(screen+"4")} >4</span>
+          <span onClick={()=>setScreen(screen+"5")} >5</span>
           
-          <span>9</span>
-          <span >0</span>
-          <Button style={{width:"180px"}} variant="success" onClick={()=>{dispatch(getOneNumber());setx(Math.random())}} >Next</Button>
+          <span onClick={()=>setScreen(screen+"6")} >6</span>
+          <span onClick={()=>setScreen(screen+"7")} >7</span>
+          <span onClick={()=>setScreen(screen+"8")} >8</span>
+          
+          <span onClick={()=>setScreen(screen+"9")} >9</span>
+          <span onClick={()=>setScreen(screen+"0")} >0</span>
+          <Button style={{width:"180px"}} type="submit"  variant="success" onClick={screen===onequestion.true_choice?goodJob:uCanDobetter} >Next</Button>
          
         </div>
       </div>
@@ -76,111 +92,10 @@ function Numbergame() {
   </div>
   
 </div></Link>
-    <div className="tel">
-<div className="keyboard">		
-        <div className="buttons">
-          <div className="cuboid number one" onmousedown="new Audio('https://josetxu.com/demos/sounds/tc-dial-1.mp3').play()">	
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-          </div>
-          <div className="cuboid number two" onmousedown="new Audio('https://josetxu.com/demos/sounds/tc-dial-2.mp3').play()">	
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-          </div>
-          <div className="cuboid number three" onmousedown="new Audio('https://josetxu.com/demos/sounds/tc-dial-3.mp3').play()">	
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-          </div>
-          <div className="cuboid number four" onmousedown="new Audio('https://josetxu.com/demos/sounds/tc-dial-1.mp3').play()">	
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-          </div>
-          <div className="cuboid number five" onmousedown="new Audio('https://josetxu.com/demos/sounds/tc-dial-2.mp3').play()">	
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-          </div>
-          <div className="cuboid number six" onmousedown="new Audio('https://josetxu.com/demos/sounds/tc-dial-3.mp3').play()">	
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-          </div>
-          <div className="cuboid number seven" onmousedown="new Audio('https://josetxu.com/demos/sounds/tc-dial-1.mp3').play()">	
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-          </div>
-          <div className="cuboid number eight" onmousedown="new Audio('https://josetxu.com/demos/sounds/tc-dial-2.mp3').play()">	
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-          </div>
-          <div className="cuboid number nine" onmousedown="new Audio('https://josetxu.com/demos/sounds/tc-dial-3.mp3').play()">	
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-          </div>
-          <div className="cuboid number asterisk" onmousedown="new Audio('https://josetxu.com/demos/sounds/tc-dial-1.mp3').play()">	
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-          </div>
-          <div className="cuboid number zero" onmousedown="new Audio('https://josetxu.com/demos/sounds/tc-dial-2.mp3').play()">	
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-          </div>
-          <div className="cuboid number hash" onmousedown="new Audio('https://josetxu.com/demos/sounds/tc-dial-3.mp3').play()">	
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-            <div className="side" />
-          </div>
-        </div>
-      </div>
-      </div>
+    
     
   
-    
+</Form>
     </div>
   )
 }

@@ -1,6 +1,6 @@
 .overlay {
   background: rgba(0,0,0,0.5);
-  min-height: 100vh;
+  min-height: 86vh;
   min-width: 100vw;
   position: absolute;
   z-index: 1;
