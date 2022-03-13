@@ -11,8 +11,16 @@ const Game=require("../models/Game")
 exports.addQuestion=async(req,res)=>{
 
     const {question,choice1,choice2,choice3,true_choice,question_type,game_type}=req.body
-
+var index=0
 try {
+if(game_type==="quiz"){
+    const quiz=await Game.find({game_type:"quiz"})
+  index=quiz.length+1
+}
+if(game_type==="number"){
+    const number=await Game.find({game_type:"number"})
+    index=number.length+1
+}
 
     const game=new Game({
     
@@ -22,7 +30,8 @@ try {
         choice3,
         true_choice,
         question_type,
-        game_type
+        game_type,
+        index
     
     })
 
@@ -100,30 +109,21 @@ exports.updateQuestion=async(req,res)=>{
 
 
 //***to be continue*****/
-
-
-
-            exports.getOneQuiz=async(req,res)=>{
-   
-                
-
-            
-
-              Game.countDocuments({ game_type: "quiz"  }, function (err, count) {
-                return random= Math.floor(Math.random() * count)
-               
-                  
-                })
-                    try {   
-                        const question= await Game.findOne({ game_type: "quiz"  }).skip(random)
-                        res.send(question)
+   exports.getOneQuiz=async(req,res)=>{
+       const {index}=req.params
+              try {   
+                    const question= await Game.findOne({ game_type: "quiz",index:index })
+                    res.send(question)
+                   
+                     
                        
-                         
-                           
-                        } catch (error) {
-                            res.status(500).send("server error")
-                        }
-                  }
+                    } catch (error) {
+                        res.status(500).send("server error")
+                    }
+                  
+                }
+                
+                  
                   
  
 
@@ -133,29 +133,22 @@ exports.updateQuestion=async(req,res)=>{
                   
             exports.getOneNumber=async(req,res)=>{
    
-                
+                const {index}=req.params
 
-            
-
-                  Game.countDocuments({ game_type: "number"  }, function (err, count) {
-                   return random= Math.floor(Math.random() * count)
-                  
+                try {   
+                    const question= await Game.findOne({ game_type: "number",index:index })
+                    res.send(question)
+                   
                      
-                   })
-                       try {   
-                           const question= await Game.findOne({ game_type: "number"  }).skip(random)
-                           res.send(question)
-                          
-                            
-                              
-                           } catch (error) {
-                               res.status(500).send("server error")
-                           }
-                     }
+                       
+                    } catch (error) {
+                        res.status(500).send("server error")
+                    }
+              }
+        
                
-                
-                
 
+                     
 
           
 
@@ -172,17 +165,31 @@ exports.updateQuestion=async(req,res)=>{
                         //}
                     
                     
-                        //exports.getQuiz=async(req,res)=>{
-                           
-                          //  const question= await Game.find({ game_type: "quiz"  })
-                            //try {
-                                //res.send(question)
+                        exports.getQuiz=async(req,res)=>{
+                              
+                            try {
+                                const questions= await Game.find({ game_type: "quiz"  })
+                                res.send(questions)
                                
-                            //} catch (error) {
-                                //res.status(500).send("server error")
-                            //}
+                            } catch (error) {
+                                res.status(500).send("server error")
+                            }
                             
-                            //}
+                            }
+
+
+
+                            exports.getNumber=async(req,res)=>{
+                              
+                                try {
+                                    const questions= await Game.find({ game_type: "number"  })
+                                    res.send(questions)
+                                   
+                                } catch (error) {
+                                    res.status(500).send("server error")
+                                }
+                                
+                                }
                     
                     
                             //exports.getNumber=async(req,res)=>{

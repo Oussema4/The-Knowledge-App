@@ -4,7 +4,7 @@ import { Navigate } from 'react-router-dom'
 function PrivateRoute({children}) {
 
     const token=localStorage.getItem("token")
-  return (<div>
+      return (<div>
 
 {token?children:<Navigate to="/Login"></Navigate>}
 

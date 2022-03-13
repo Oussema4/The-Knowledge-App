@@ -13,9 +13,11 @@ password:{
     type:String,required:true
 },
 role:{
-    type:String,default:0
+    type:Number,default:0
 },
 imageUrl:String,
+
+
 
     
 })

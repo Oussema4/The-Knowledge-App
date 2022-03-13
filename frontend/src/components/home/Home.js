@@ -16,7 +16,7 @@ function Home() {
 <Link to="/Learn">
 <div className="carta 4" >
          <div className="carta_image">
-           <img src="https://media.giphy.com/media/lPwZcFRMGOFPO/giphy.gif" />
+           <img src="giphy.webp" />
          </div>
 
          <div className="carta_title title-black">
@@ -29,7 +29,7 @@ function Home() {
 <Link to="/quiz">
        <div className="carta 3" >
          <div className="carta_image">
-           <img src="https://media.giphy.com/media/tgWX6N4nHQjNC/giphy.gif" />
+           <img src="giphy2.webp" />
          </div>
         
          <div className="carta_title title-black">
@@ -41,7 +41,7 @@ function Home() {
        <Link to="/number">
        <div className="carta 4" >
          <div className="carta_image">
-           <img src="https://media.giphy.com/media/dJoJCypWihblC/giphy.gif" />
+           <img src="giphy3.webp" />
          </div>
 
          <div className="carta_title title-black">

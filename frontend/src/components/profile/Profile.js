@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
+import { Button } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import {  getcurrent, logout } from '../../redux/actions/authAction'
@@ -47,7 +48,7 @@ const handelEdit=async()=>{
      <div className="overlay text-center">
         <div id="profile-panel" className="panel panel-default">
           <div className="panel-heading">
-            <h3>Profile Settings</h3>
+            <h3 style={{color:"white"}}>Profile Settings</h3>
           </div>
           <div className="panel-body">
             <div className="col-md-3">
@@ -56,38 +57,39 @@ const handelEdit=async()=>{
             <div className="col-md-9 main-user-info text-left">
               <ul className="list-group">
                 <li className="list-group-item">
-                  {user.name}
+                 User: {user.name}
                 </li>
                 <li className="list-group-item">
-                  {user.email}
+         Email: {user.email}
                 </li>
-                <li className="list-group-item">
-                  Points
-                </li>
+               
               </ul>
             </div>
           </div>
          
           <div className="privacy-item">
-            <h4 className="text-left">Privacy</h4>
+            
+            <h5 style={{color:"white"}} className="text-left">Change your Profile photo</h5>
           </div>
-         
+          <br/>
           <div className="item">
             <div className="label">
-              <h6 style={{color:"white"}}>Change your Profile photo</h6>
+              <br/>
             <input type="file"  style={{color:"white"}} onChange={(e)=>setFile(e.target.files[0])}/>  
            </div>
           </div>
-         
+          <br/>
           <hr />
+          <br/>
           <div className="col-md-6" />
           <div className="panel-footer">
             <button className="btn btn-success btn-block" onClick={handelEdit}>Save changes</button>
-            
+            <br/>
+            <br/>
             <button className="btn btn-danger btn-block" onClick={()=>dispatch(logout())}>Logout</button>
             <div className="item">
             <div className="label">
-              <h6 ><Link to="/" >Delete your account</Link></h6>
+              <Button variant='dark'>Delete your account</Button>
             </div>
           </div>
           </div>

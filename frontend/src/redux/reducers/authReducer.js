@@ -1,11 +1,12 @@
-import { CLEARERRORS, FAIL, GETCURRENT, LOGOUT, SIGNIN, SIGNUP } from "../types/authType";
+import { CLEARERRORS, FAIL, GETCURRENT, GETUSERS, LOGOUT, SIGNIN, SIGNUP } from "../types/authType";
 
 const initState={
 
     user:{},
     auth:false,
     errors:[],
-    change:true
+    change:true,
+    users:[]
 }
 
 const authReducer=(state=initState,action)=>{
@@ -29,6 +30,10 @@ case LOGOUT:
 
     case CLEARERRORS:
         return{...state,errors:[]}
+        
+        case GETUSERS:
+            return{...state,users:action.payload}
+            
 
         default:
             return state

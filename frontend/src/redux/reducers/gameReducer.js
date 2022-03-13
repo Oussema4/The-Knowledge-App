@@ -1,11 +1,14 @@
-import {     GETONENUMBER, GETONEQUESTION, GETONEQUIZ, GETQUESTIONS, TOGGLEFALSE, TOGGLETRUE } from "../types/gameType"
+import {   GETALLNUMBERS, GETALLQUIZ, GETONENUMBER, GETONEQUESTION, GETONEQUIZ, GETQUESTIONS, TOGGLEFALSE, TOGGLETRUE } from "../types/gameType"
 
 
 
 const initState={
 allquestions:[],
+allnumbers:[],
+allquiz:[],
 onequestion:{},
-edit:false
+edit:false,
+
 
 
 
@@ -27,7 +30,11 @@ switch (action.type) {
                        return{...state,edit:true}
                         case TOGGLEFALSE:
                             return{...state,edit:false}
-         
+                            case GETALLNUMBERS:
+                                return{...state,allnumbers:action.payload}
+         case GETALLQUIZ:
+             return{...state,allquiz:action.payload}
+            
 
     default:
         return state

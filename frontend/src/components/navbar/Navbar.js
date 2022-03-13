@@ -26,27 +26,28 @@ const dispatch=useDispatch()
     
        <NavDropdown    style={{fontSize:"19px"}} title="Games" id="collasible-nav-dropdown">
         <NavDropdown.Item as={Link}  to="/quiz"  style={{textDecoration: "none",color:"black" }} >Quiz</NavDropdown.Item>
-        <NavDropdown.Item ><Link  to="/number" style={{textDecoration: "none",color:"black" }}> Guess The Number</Link></NavDropdown.Item>
+        <NavDropdown.Item as={Link} to="/number" style={{textDecoration: "none",color:"black" }}> Guess The Number</NavDropdown.Item>
 
       
 
         
       </NavDropdown></Nav>
     
-
+{user.role==1?
       <Nav>
        
     
        <NavDropdown    style={{fontSize:"19px"}} title="Admin" id="collasible-nav-dropdown">
-       <NavDropdown.Item ><Link  to="/add_edit" style={{textDecoration: "none",color:"black" }}>Add</Link></NavDropdown.Item>
+       <NavDropdown.Item as={Link} to="/add_edit" style={{textDecoration: "none",color:"black" }}>Add</NavDropdown.Item>
 
-        <NavDropdown.Item ><Link  to="/questions" style={{textDecoration: "none",color:"black" }}>Questions List</Link></NavDropdown.Item>
+        <NavDropdown.Item as={Link} to="/questions" style={{textDecoration: "none",color:"black" }}>Questions List</NavDropdown.Item>
+        <NavDropdown.Item as={Link} to="/users_list" style={{textDecoration: "none",color:"black" }}>Users List</NavDropdown.Item>
 
       
 
         
-      </NavDropdown></Nav>
-    
+      </NavDropdown></Nav>:null
+}
     
       
      </Nav>
@@ -60,7 +61,7 @@ const dispatch=useDispatch()
         <NavDropdown.Item href="#action/3.2">Help</NavDropdown.Item>
         
         <NavDropdown.Divider />
-        <NavDropdown.Item  onClick={()=>dispatch(logout())}><Link to="/Login">Logout</Link></NavDropdown.Item>
+        <NavDropdown.Item  onClick={()=>dispatch(logout())} as={Link} to="/Login">Logout</NavDropdown.Item>
       </NavDropdown>
       </Nav>
        :

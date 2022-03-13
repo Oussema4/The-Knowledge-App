@@ -91,3 +91,50 @@ exports.signup=async(req,res)=>{
             res.status(500).send("server error")
         }
         }
+
+
+        exports.updateUser=async(req,res)=>{
+
+            const  {userId} =req.params
+        
+        
+        try {
+            await User.findByIdAndUpdate(userId,{$set:{...req.body}})
+            res.send("updated")
+            
+        } catch (error) {
+        
+            res.status(500).send("server error")
+        
+        }
+        
+            
+        }
+
+
+        exports.getAllUsers=async(req,res)=>{
+            try {
+            
+            const user= await User.find()
+            
+            res.send(user)
+        
+            } catch (error) {
+                res.status(500).send("server error")
+            }
+            
+            }
+
+
+            exports.deleteUser=async(req,res)=>{
+
+                const  {id} =req.params
+                    try {
+                await User.findByIdAndDelete(id)
+                res.send("User deleted")
+                
+                        
+                    } catch (error) {
+                        res.status(500).send("server error")
+                    }
+            }

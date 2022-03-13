@@ -23,7 +23,9 @@ question_type:{
 },
 game_type:{
     type:String,required:true
-}
+},
+index:{
+    type:Number,required:true}
 
     
 })

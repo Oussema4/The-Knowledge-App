@@ -35,7 +35,7 @@ const handleAdd=()=>{
  navigate("/questions")
 }
 
-const handleEdit=(e)=>{
+const handleEdit=()=>{
   
   dispatch(editQuestion(question._id,data))
   dispatch(toggleFalse())
@@ -51,7 +51,8 @@ useEffect(()=>{edit && edit?setdata({question:question && question.question,
   choice3:question && question.choice3,
   true_choice:question && question.true_choice,
   game_type:question && question.game_type,
-  question_type:question && question.question_type },[question]):
+  question_type:question && question.question_type
+ },[question]):
   setdata({question:"",choice1:"",choice2:"",choice3:"",true_choice:"",game_type:"",question_type:""})
   },[question])
 
@@ -80,8 +81,9 @@ useEffect(()=>{edit && edit?setdata({question:question && question.question,
     <Button variant='dark' name="question_type" onClick={(e)=> setdata({...data,[e.target.name]:"Sport"})}>Sport</Button>  
     <Button variant='warning'  name="question_type" onClick={(e)=> setdata({...data,[e.target.name]:"History"})}>History</Button> 
     <Button variant='danger'  name="question_type" onClick={(e)=> setdata({...data,[e.target.name]:"Worldwide"})}>Worldwide</Button>
+    
 
-    <Form.Control  style={{width:"50%"}}  value={data.question_type} type="text"   style={{width:"50%"}} placeholder=" the question type"  name="question_type" onChange={handleChange}  />
+    <Form.Control  style={{width:"50%"}}  value={data.question_type} type="text"   placeholder=" the question type"  name="question_type" onChange={handleChange}  />
   </Form.Group>
 
 
