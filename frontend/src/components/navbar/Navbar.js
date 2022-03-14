@@ -19,7 +19,7 @@ const dispatch=useDispatch()
    <Navbar.Collapse id="responsive-navbar-nav">
      <Nav className="me-auto">
      <Nav.Link as={Link} to="/" style={{fontSize:"19px"}}>Home</Nav.Link>
-      <Nav.Link as={Link} to="/" style={{fontSize:"19px"}}>Learn</Nav.Link>
+      <Nav.Link as={Link} to="/help" style={{fontSize:"19px"}}>Help</Nav.Link>
 
       <Nav>
        
@@ -57,8 +57,8 @@ const dispatch=useDispatch()
        <img style={{width:"50px",height:"50px",borderRadius:"50px"}} src={user.imageUrl?`uploads/${user.imageUrl}`:"defaultPdp.jpg"}></img>
        <NavDropdown    style={{fontSize:"19px"}}  title={user.name} id="collasible-nav-dropdown">
 
-        <NavDropdown.Item as={Link} to="/profile"> Edit Profile </NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.2">Help</NavDropdown.Item>
+        <NavDropdown.Item as={Link} to="/profile">Edit Profile </NavDropdown.Item>
+        
         
         <NavDropdown.Divider />
         <NavDropdown.Item  onClick={()=>dispatch(logout())} as={Link} to="/Login">Logout</NavDropdown.Item>

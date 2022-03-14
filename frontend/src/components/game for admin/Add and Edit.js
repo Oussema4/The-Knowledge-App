@@ -78,10 +78,11 @@ useEffect(()=>{edit && edit?setdata({question:question && question.question,
    <Form.Group className="mb-3" controlId="formBasicPassword" > 
     <Form.Label><b>The question type</b></Form.Label>
     <br/>
-    <Button variant='dark' name="question_type" onClick={(e)=> setdata({...data,[e.target.name]:"Sport"})}>Sport</Button>  
+    <Button variant='success' name="question_type" onClick={(e)=> setdata({...data,[e.target.name]:"Sport"})}>Sport</Button>  
     <Button variant='warning'  name="question_type" onClick={(e)=> setdata({...data,[e.target.name]:"History"})}>History</Button> 
-    <Button variant='danger'  name="question_type" onClick={(e)=> setdata({...data,[e.target.name]:"Worldwide"})}>Worldwide</Button>
-    
+    <Button variant='danger'  name="question_type" onClick={(e)=> setdata({...data,[e.target.name]:"Geography"})}>Geography</Button>
+    <Button variant='info'  name="question_type" onClick={(e)=> setdata({...data,[e.target.name]:"Music"})}>Music</Button>
+    <Button variant='dark'  name="question_type" onClick={(e)=> setdata({...data,[e.target.name]:" Film & TV"})}> Film & TV</Button>
 
     <Form.Control  style={{width:"50%"}}  value={data.question_type} type="text"   placeholder=" the question type"  name="question_type" onChange={handleChange}  />
   </Form.Group>

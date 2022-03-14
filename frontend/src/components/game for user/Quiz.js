@@ -55,7 +55,7 @@ const uCanDobetter=()=>{
 
         <main>
         {
-         quiz.length<currentIndex && score>=currentIndex/2? <><h2>Congratulation</h2><h3>Your Score is {score}</h3><br/><Button onClick={()=>navigate("/")} variant="dark">Go home</Button></>:quiz.length<currentIndex && score<currentIndex/2?<><h2>Hard Luck</h2><h3>Your Score is {score}</h3><br/><Button onClick={()=>navigate("/")} variant="dark">Go home</Button></>:<div className="game-quiz-container">
+         quiz.length<currentIndex && score>=currentIndex/2? <><h2>Congratulation</h2><h3>Your Score is {score}/{quiz.length}</h3><br/><Button onClick={()=>navigate("/")} variant="dark">Go home</Button></>:quiz.length<currentIndex && score<currentIndex/2?<><h2>Hard Luck</h2><h3>Your Score is {score}/{quiz.length}</h3><br/><Button onClick={()=>navigate("/")} variant="dark">Go home</Button></>:<div className="game-quiz-container">
          <div className="game-details-container">
            <h1>Score : <span id="player-score" />  {score} <img  style={{width:"15px",paddingTop:"8px"}} src="icon_ball.png" alt="error"></img> <span className="questions-count" /></h1>
            <h1>Question : <span id="question-number" /> {onequestion.index}<span className="questions-count" /></h1>
@@ -137,7 +137,7 @@ We believe in you  </Alert>
  
 :tonext==0?<Alert variant="danger">
 you can do better </Alert>
-:score%10==0?<Alert variant="dark">
+:score%3==0?<Alert variant="dark">
 Goku Can Help You
 </Alert>:<Alert variant="success">
 Good Job
@@ -163,7 +163,7 @@ Good Job
 
 
 
-{score%2==0&&score!=0?<><div onClick={()=>setFifty(false)} className="grad">
+{score%3==0&&score!=0?<><div onClick={()=>setFifty(false)} className="grad">
   
   <div className="container1">
     <div className="left">
@@ -173,7 +173,6 @@ Good Job
   
   <div className="container2">
     <div className="goku">
-      
     </div>
   </div>
   

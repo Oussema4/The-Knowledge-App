@@ -720,7 +720,7 @@ input[type=radio]:checked ~ .option {
   /*buttons*/
 
 
-  .userlist{display: flex; justify-content: space-around;flex-wrap: wrap;background-color: rgb(255, 233, 172);}
+  .userlist{display: flex; justify-content: space-between;padding-top:20px;flex-wrap: wrap}
 
 
 

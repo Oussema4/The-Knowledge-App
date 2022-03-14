@@ -88,9 +88,7 @@ const handelEdit=async()=>{
             <br/>
             <button className="btn btn-danger btn-block" onClick={()=>dispatch(logout())}>Logout</button>
             <div className="item">
-            <div className="label">
-              <Button variant='dark'>Delete your account</Button>
-            </div>
+            
           </div>
           </div>
           

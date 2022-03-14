@@ -16,6 +16,7 @@ import Questions from './components/game for admin/Questions';
 import AddEdit from './components/game for admin/Add and Edit';
 import UsersList from './components/game for admin/UsersList';
 import AdminRoute from './router/AdminRoute';
+import Help from './components/help/Help';
 
 
 function App() {
@@ -42,6 +43,8 @@ const user=useSelector(state=>state.authReducer.user)
       <Route path="/profile"element={<PrivateRoute><Profile></Profile></PrivateRoute>}/>
       <Route path="/quiz" element={<PrivateRoute><Quiz></Quiz></PrivateRoute>}></Route>
       <Route path="/number" element={<PrivateRoute><Numbergame></Numbergame></PrivateRoute>}></Route>
+      <Route path="/help" element={<PrivateRoute><Help></Help></PrivateRoute>}></Route>
+
       <Route path="/questions" element={<AdminRoute ><Questions></Questions></AdminRoute>}></Route>
       <Route path="/add_edit" element={<AdminRoute><AddEdit></AddEdit></AdminRoute>}></Route>
       <Route path="/users_list" element={<AdminRoute><UsersList></UsersList></AdminRoute>}></Route>

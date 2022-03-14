@@ -11,20 +11,12 @@ function Home() {
     
     
      <div className='bg' >
+       
        <h1  className='p_knowledge_home' style={{textAlign:"center"}}>WELCOME TO THE KN<img  style={{width:"40px"}} src="icon_ball.png" alt="error"></img>WLEDGE  WORLD</h1>
-<div className="cards-list"  >
-<Link to="/Learn">
-<div className="carta 4" >
-         <div className="carta_image">
-           <img src="giphy.webp" />
-         </div>
 
-         <div className="carta_title title-black">
-           <p className='p_home_card'> Learn</p>
-         </div>
-         
-       </div>
-       </Link>
+
+<div className="cards-list"  >
+
 
 <Link to="/quiz">
        <div className="carta 3" >
@@ -50,10 +42,21 @@ function Home() {
          
        </div>
        </Link>
-
+      
       
      </div>
- 
+     <Link to="/help">
+<div className="carta 4" >
+         <div className="carta_image">
+           <img src="https://media3.giphy.com/media/dxld1UBIiGuoh31Fus/giphy.gif" />
+         </div>
+
+         <div className="carta_title title-black">
+           <p className='p_home_card'> Help</p>
+         </div>
+         
+       </div>
+       </Link>
       
       </div>
 

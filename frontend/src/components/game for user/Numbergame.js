@@ -61,7 +61,7 @@ const uCanDobetter=(e)=>{
   marginRight: "auto",
   marginTop:"10px",
   height:"600px",
-  width: "50%"}} src="https://media.giphy.com/media/xTk9ZvMnbIiIew7IpW/giphy.gif"/>: numbers.length<currentIndex && score>=currentIndex/2?<><h2>Congratulation</h2><h3>Your Score is {score}</h3><br/><Button onClick={()=>navigate("/")} variant="dark">Go home</Button></>:numbers.length<currentIndex && score<currentIndex/2?<><h2>Hard Luck</h2><h3>Your Score is {score}</h3><br/><Button onClick={()=>navigate("/")} variant="dark">Go home</Button></>:<Form>
+  width: "50%"}} src="https://media.giphy.com/media/xTk9ZvMnbIiIew7IpW/giphy.gif"/>: numbers.length<currentIndex && score>=currentIndex/2?<div className='cent'><h2>Congratulation</h2><h3>Your Score is {score}/{numbers.length}</h3><br/><Button onClick={()=>navigate("/")} variant="dark">Go home</Button></div>:numbers.length<currentIndex && score<currentIndex/2?<div className='cent'><h2>Hard Luck</h2><h3>Your Score is {score}/{numbers.length}</h3><br/><Button onClick={()=>navigate("/")} variant="dark">Go home</Button></div>:<Form>
     
    
     <h1 style={{textAlign:'center',fontSize:"300%",color:"black",paddingTop:"40px",paddingBottom:"80px",backgroundImage:"url(https://www.seekpng.com/png/full/375-3753368_background-image-for-title-unhitched-book-by-sunny.png)"}}>
@@ -103,7 +103,7 @@ const uCanDobetter=(e)=>{
        {/* Screen and clear key */}
        <div className="top">
          <span className="clear" onClick={()=>setScreen("")}>C</span>
-         <input placeholder='..'  className='screen' autofocus="on" value={screen} onChange={(e)=>setScreen(e.target.value)}/>
+         <input placeholder='..'  className='screen' autoFocus value={screen} onChange={(e)=>setScreen(e.target.value)}/>
        </div>
        <div className="keys">
          {/* operators and other keys */}
@@ -130,9 +130,14 @@ const uCanDobetter=(e)=>{
 
 :tonext==0?<Alert style={{textAlign:"center"}} variant="danger">
 <h5>you can do better</h5> </Alert>
+:score%3==0?<Alert  style={{textAlign:"center"}} variant="dark">
+<h5>Goku Can Help You</h5>
+</Alert>
 :<Alert style={{textAlign:"center"}} variant="success">
 <h5>Good Job</h5>
 </Alert>} 
+
+
      </div>
     
    

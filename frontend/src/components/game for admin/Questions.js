@@ -4,10 +4,10 @@ import { useDispatch,useSelector} from 'react-redux'
 import Gamecard from '../game for user/Gamecard'
 import { Button, Form, FormControl } from 'react-bootstrap'
 import "../game for user/game.css"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function Questions() {
-
+const navigate=useNavigate()
     const dispatch=useDispatch()
 
 const allquestions=useSelector(state=>state.gameReducer.allquestions)
@@ -42,7 +42,6 @@ useEffect(()=>{
     
   
 <h2>   {allquestions.map(el=><Gamecard el={el}></Gamecard>)}</h2>
-
 
 
   
